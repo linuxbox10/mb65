@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skin>
+
+	<!-- Templates -->
+    <screen name="TitlaSat">
+    <widget source="Title" render="Label" position="405,241" size="362,58" zPosition="1" halign="center" valign="bottom" font="ExtraF_4; 44" backgroundColor="bgmain" transparent="1" borderWidth="1" borderColor="bgbutton" />
+    <widget source="global.CurrentTime" render="Label" position="405,345" size="362,69" font="Subtitlefont; 65" halign="center" backgroundColor="bgmain" transparent="1" valign="top" borderWidth="1" borderColor="bgbutton">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <widget source="session.CurrentService" render="Label" position="405,443" size="362,76" font="Subtitlefont; 38" halign="center" backgroundColor="bgmain" transparent="1" valign="center" borderWidth="1" borderColor="bgbutton">
+      <convert type="ServiceName">Name</convert>
+    </widget>
+  </screen>
+    <screen name="MENU_source=menu" backgroundColor="transparent" flags="wfNoBorder">
+    <panel name="TitlaSat" />
+    <ePixmap pixmap="Skin-MB65/menu/1.png" position="0,0" size="1920,1080" zPosition="-1" alphatest="blend" />
+    <ePixmap position="1856,229" size="30,662" pixmap="Skin-MB65/slider/30x662.png" alphatest="blend" zPosition="2" />
+    <widget source="menu" render="Listbox" enableWrapAround="1" position="1184,273" size="700,550" zPosition="1" scrollbarMode="showNever" transparent="1">
+       <convert type="TemplatedMultiContent">
+         {"template": [ MultiContentEntryText(pos = (20, 5), size = (645, 40), flags = RT_HALIGN_LEFT, text =0) ], "fonts": [gFont("Regular",36)], "itemHeight":55}
+       </convert>
+    </widget>
+  </screen>
+  	<screen name="menu-menu">
+ 
+    <ePixmap pixmap="Skin-MB65/Circle Icons/Home.png" position="122,252" size="256,256" zPosition="1" alphatest="blend" />
+    <panel name="MENU_source=menu" />
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/epg_settings.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">epg_settings</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/recording_setup.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">recording_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/hardisk_selection.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">hardisk_selection</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/network_setup.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">network_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/input_device_setup.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">input_device_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/lcd_setup.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">lcd_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/keyboard_setup.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">keyboard_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/RecordPaths.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">RecordPaths</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/language_setup.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">language_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/timezone_setup.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">timezone_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/hotkey_setup.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">hotkey_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/streaming_clients.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">streaming_clients</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/transcoding_setup.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">transcoding_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/av_setup.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">av_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/subtitle_setup.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">subtitle_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/autolanguage_setup.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">autolanguage_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/auto_3d_setup.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">auto_3d_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/sd_position_setup.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">sd_position_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/hdmi_cec_setup.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">hdmi_cec_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/skin_selector.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">skin_selector</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/video_finetune.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">video_finetune</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/backup_screen.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">backup_screen</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/av_setup.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">undefined</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/Users2.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">accesslevel_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget> 
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/Users2.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">user_interface</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>       
+  </screen>
+  <!-- ///*** MAIN MENU ***\\\ -->
+    	<screen name="menu-mainmenu">
+
+    <ePixmap pixmap="Skin-MB65/Circle Icons/av_setup.png" position="122,252" size="256,256" zPosition="1" alphatest="blend" />
+    <panel name="MENU_source=menu" />
+    <ePixmap pixmap="Skin-MB65/menu/1.png" position="0,0" size="1920,1080" zPosition="-1" alphatest="blend" />
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/av_setup.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">setup_selection</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/timer_edit.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">timer_edit</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/plugin_selection.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">plugin_selection</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/info_screen.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">info_screen</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/standby_restart_list.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">standby_restart_list</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/av_setup.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">TSmedia_mainmenu</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/av_setup.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">TSpanel_mainmenu</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/av_setup.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">XCplugin</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/av_setup.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">dmc_mainmenu</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/av_setup.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">panel_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/av_setup.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">newmenu</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/iptv_main.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">iptv_main</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/youtube.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">youtube_tv</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/google+.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">googlemaps</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/DVD.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">dvd_player</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/backup_screen.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">backup_screen</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/av_setup.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">av_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+  </screen>
+  <!-- ///*** SETUP MENU ***\\\ -->
+      	<screen name="menu-setup">
+
+    <ePixmap pixmap="Skin-MB65/Circle Icons/MissionControl2.png" position="122,252" size="256,256" zPosition="1" alphatest="blend" />
+    <panel name="MENU_source=menu" />
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/sistem.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">system_selection</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/tuner.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">service_searching_selection</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/cam_setup.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">cam_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/Users2.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">parental_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/backup_screen.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">factory_reset</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/Chip.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">flash_image</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/Update.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">software_update</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+  </screen>
+  <!-- ///*** SYSTEM MENU ***\\\ -->
+        	<screen name="menu-system">
+
+    <ePixmap pixmap="Skin-MB65/Circle Icons/SystemInfo.png" position="122,252" size="256,256" zPosition="1" alphatest="blend" />
+    <panel name="MENU_source=menu" />
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/Parallels.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">video_selection</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/sistem.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">usage_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/swapfile_setup.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">swapfile_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/Users2.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">user_interface</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/av_setup.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">gui_settings</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>    
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/SystemPrefs.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">expert_selection</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/iptv_main.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">iptv_config</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/fansetup_config.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">fansetup_config</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+	    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/graph.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">mountpoints_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/av_setup.png" position="795,252" size="256,256" alphatest="blend" zPosition="1">
+      <convert type="MenuEntryCompare">undefined</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+  </screen>
+  <!-- ///*** harddisk MENU ***\\\ -->
+          	<screen name="menu-harddisk">
+
+    <ePixmap pixmap="Skin-MB65/Circle Icons/HDD.png" position="122,252" size="256,256" zPosition="1" alphatest="blend" />
+    <panel name="MENU_source=menu" />
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/HDD.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">harddisk_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/hardisk_selection.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">harddisk_init</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/graph.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">harddisk_check</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/swapfile_setup.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">harddisk_convert</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+  </screen>
+  <!-- ///*** STANDBY/RESTART MENU ***\\\ -->
+          	<screen name="menu-shutdown">
+
+    <ePixmap pixmap="Skin-MB65/Circle Icons/standby_restart_list.png" position="122,252" size="256,256" zPosition="1" alphatest="blend" />
+    <panel name="MENU_source=menu" />
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/POWER - SHUT DOWN.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">deep_standby</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/POWER - RESTART.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">restart</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/POWER - RESTART-E2.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">restart_enigma</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/Hardreset.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">Hardreset</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/POWER - STANDBY.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">standby</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/Sleepp.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">sleep</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+  </screen>
+  <!-- ///*** INFORMATION SUBMENU ***\\\ -->
+          	<screen name="menu-information">
+
+    <ePixmap pixmap="Skin-MB65/Circle Icons/info_screen.png" position="122,252" size="256,256" zPosition="1" alphatest="blend" />
+    <panel name="MENU_source=menu" />
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/service_info_screen.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">service_info_screen</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/SystemInfo.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">about_screen</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/streaming_clients.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">streaming_clients_info_screen</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/timezone_setup.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">network_screen</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+  </screen>
+  <!-- ///*** scan MENU ***\\\ -->
+          	<screen name="menu-scan">
+
+    <ePixmap pixmap="Skin-MB65/Circle Icons/tuner.png" position="122,252" size="256,256" zPosition="1" alphatest="blend" />
+    <panel name="MENU_source=menu" />
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/tuner_setup.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">tuner_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/auto_scan.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">auto_scan</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/fastscan.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">fastscan</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/tuner.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">satfinder</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/manual_scan.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">manual_scan</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/positioner_setup.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">positioner_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/av_setup.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">fallbacktuner_settings</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>	
+  </screen>
+  <!-- ///*** expert SUBMENU ***\\\ -->
+          	<screen name="Expert-settings">
+
+    <ePixmap pixmap="Skin-MB65/Circle Icons/SystemPrefs.png" position="122,252" size="256,256" zPosition="1" alphatest="blend" />
+    <panel name="MENU_source=menu" />
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/Users2.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">accesslevel_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>     
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/recording_setup.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">recording_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/hardisk_selection.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">hardisk_selection</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/network_setup.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">network_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/Network.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">input_device_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/lcd_setup.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">lcd_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/keyboard_setup.png" position="795,252" size="256,256" zPosition="3" alphatest="blend" transparent="1">
+      <convert type="MenuEntryCompare">keyboard_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/RecordPaths.png" position="795,252" size="256,256" alphatest="blend" zPosition="1">
+      <convert type="MenuEntryCompare">RecordPaths</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/hotkey_setup.png" position="795,252" size="256,256" alphatest="blend" zPosition="1">
+      <convert type="MenuEntryCompare">hotkey_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/transcoding_setup.png" position="795,252" size="256,256" alphatest="blend" zPosition="1">
+      <convert type="MenuEntryCompare">transcoding_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+  </screen>
+  <!-- ///*** cam SUBMENU ***\\\ -->
+          	<screen name="menu-cam">
+    <ePixmap pixmap="Skin-MB65/Circle Icons/cam_setup.png" position="122,252" size="256,256" zPosition="1" alphatest="blend" />
+    <panel name="MENU_source=menu" />
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/softcam_setup.png" position="795,252" size="256,256" alphatest="blend" zPosition="1">
+      <convert type="MenuEntryCompare">softcam_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/ci_setup.png" position="795,252" size="256,256" alphatest="blend" zPosition="1">
+      <convert type="MenuEntryCompare">ci_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Skin-MB65/Circle Icons/ci_assign.png" position="795,252" size="256,256" alphatest="blend" zPosition="1">
+      <convert type="MenuEntryCompare">cam_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+  </screen>
+  <!-- FlashMB -->
+	<screen name="FlashImage">
+	<panel name="ButtonTemplate-mb"/>
+	<ePixmap pixmap="Skin-MB65/menu/1500x820.png" position="center,center" size="1340,820" alphatest="blend" zPosition="-10" />
+    <widget source="Title" render="Label" position="328,144" size="1235,49" zPosition="-1" halign="center" font="Regular; 36" transparent="1" valign="center" />
+    <widget name="text" position="330,221" size="1255,71" font="Regular;32" halign="center" />
+    <eLabel name="" position="315,209" size="1283,88" zPosition="-5" />
+    <eLabel name="" position="315,310" size="1283,555" zPosition="-5" />
+    <widget name="list" position="330,323" size="1255,528" itemHeight="45" scrollbarMode="showOnDemand" scrollbarWidth="4" scrollbarSliderBorderColor="info" enableWrapAround="1" transparent="1" />
+    <widget font="Regular; 26" foregroundColor="white" halign="center" position="1278,868" render="Label" size="320,38" source="global.CurrentTime" transparent="0" valign="center" zPosition="2">
+    <convert type="ClockToText">Format: %A %d.%m.%Y</convert>
+    </widget>
+    <widget font="Regular; 38" foregroundColor="white" halign="center" position="1278,909" render="Label" size="320,38" source="global.CurrentTime" transparent="0" valign="center" zPosition="2">
+    <convert type="ClockToText">Default</convert>
+    </widget>
+    <ePixmap position="1559,310" size="30,555" pixmap="Skin-MB65/slider/30x555.png" alphatest="blend" zPosition="3" />
+	</screen>
+    <!-- ///*** ChoiceBox ***\\\ -->
+          	<screen name="Choice-Box">
+  <ePixmap pixmap="Skin-MB65/menu/1500x820.png" position="center,center" size="1340,820" alphatest="blend" zPosition="-10" />
+  <widget source="Title" render="Label" position="328,144" size="1235,49" zPosition="-1" halign="center" font="Regular; 36" transparent="1" valign="center" />
+  <widget name="text" position="330,221" size="1255,71" font="Regular;32" halign="center" />
+  <eLabel name="" position="315,209" size="1283,88" zPosition="-5" />
+  <eLabel name="" position="315,310" size="1283,555" zPosition="-5" />
+  <widget name="list" position="330,323" size="1255,528" itemHeight="48" scrollbarMode="showOnDemand" scrollbarWidth="4" scrollbarSliderBorderColor="info" enableWrapAround="1" transparent="1" />
+  <eLabel name="" position="315,880" size="145,50" font="Regular; 28" valign="center" halign="center" text="OK" />
+  <eLabel name="" position="1453,880" size="145,50" font="Regular; 28" valign="center" halign="center" text="Exit" />
+  <widget font="Regular; 26" foregroundColor="white" halign="center" position="640,880" render="Label" size="320,50" source="global.CurrentTime" transparent="0" valign="center" zPosition="2">
+    <convert type="ClockToText">Format: %A %d.%m.%Y</convert>
+  </widget>
+  <widget font="Regular; 38" foregroundColor="white" halign="center" position="969,880" render="Label" size="320,50" source="global.CurrentTime" transparent="0" valign="center" zPosition="2">
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <ePixmap position="1559,310" size="30,555" pixmap="Skin-MB65/slider/30x555.png" alphatest="blend" zPosition="3" />	
+</screen>
+    <!-- ///*** SetUP ***\\\ -->
+          	<screen name="SetUP">
+  <ePixmap pixmap="Skin-MB65/menu/setup.png" position="center,center" size="1500,820" zPosition="-1" alphatest="on" />
+  <ePixmap pixmap="Skin-MB65/menu/setupp.png" position="1365,410" size="250,250" zPosition="1" alphatest="on" />
+  <widget source="Title" render="Label" position="1305,170" size="362,58" zPosition="1" halign="center" valign="bottom" font="ExtraF_4; 44" backgroundColor="bgmain" transparent="1" foregroundColor="info" borderWidth="1" borderColor="bgbutton" />
+  <widget source="global.CurrentTime" render="Label" position="1305,270" size="362,71" font="Subtitlefont; 65" halign="center" foregroundColor="info" backgroundColor="bgmain" transparent="1" valign="top" borderWidth="1" borderColor="bgbutton" zPosition="1">
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <widget foregroundColor="info" backgroundColor="bgmain" font="ExtraF_1; 36" halign="center" position="1305,875" render="Label" size="362,44" source="global.CurrentTime" transparent="1" valign="center" zPosition="2" borderWidth="1" borderColor="dark">
+    <convert type="ClockToText">Format: %A %d.%m.%Y</convert>
+  </widget>
+  <widget source="session.CurrentService" render="Label" position="1305,766" size="362,71" font="Subtitlefont; 38" halign="center" foregroundColor="info" backgroundColor="bgmain" transparent="1" valign="center" borderWidth="1" borderColor="darkgrey">
+    <convert type="ServiceName">Name</convert>
+  </widget>
+  <ePixmap pixmap="Skin-MB65/buttons/red48x48.png" position="250,865" size="48,48" alphatest="blend" />
+  <ePixmap pixmap="Skin-MB65/buttons/green48x48.png" position="595,865" size="48,48" alphatest="blend" />
+  <widget source="key_red" render="Label" position="310,870" size="330,50" zPosition="1" font="Regular;32" halign="left" valign="center" foregroundColor="button" backgroundColor="bgkey" transparent="1" />
+  <widget source="key_green" render="Label" position="655,870" size="330,50" zPosition="1" font="Regular;32" halign="left" valign="center" foregroundColor="button" backgroundColor="bgkey" transparent="1" />
+  <widget name="config" position="250,165" size="990,520" zPosition="2" font="Regular; 30" itemHeight="40" enableWrapAround="1" scrollbarMode="showNever" foregroundColor="button" backgroundColor="bgbutton" transparent="1" />
+  <widget name="description" position="255,721" size="990,110" zPosition="1" font="Regular;28" halign="center" valign="center" foregroundColor="info" backgroundColor="bgmain" transparent="1" borderWidth="1" borderColor="bgbutton" />
+  <widget name="HelpWindow" position="740,830" zPosition="1" size="1,1" transparent="1" alphatest="blend" />
+  <widget name="footnote" position="844,851" size="398,70" zPosition="1" font="Regular;26" halign="right" valign="center" foregroundColor="button" backgroundColor="bgmain" transparent="1" />
+</screen>
+	<!-- Button Templates-mb -->
+	<screen name="ButtonTemplate-mb">
+		<widget objectTypes="key_red,Label,Button" name="key_red" position="380,866" size="370,38" backgroundColor="black" zPosition="1" transparent="1" font="Regular;34" halign="left" />
+		<widget objectTypes="key_red,StaticText" source="key_red" render="Label" position="380,866" size="370,38" backgroundColor="darkgrey" zPosition="2" transparent="1" foregroundColor="grey" font="Regular;34" halign="left" />
+		<widget objectTypes="key_red,StaticText" source="key_red" render="Pixmap" pixmap="Skin-MB65/buttons/red.png" position="330,868" size="34,34" zPosition="1" alphatest="blend">
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<ePixmap objectTypes="key_red,Button,Label" pixmap="Skin-MB65/buttons/red.png" position="330,868" size="34,34" zPosition="1" alphatest="blend" />
+
+		<widget objectTypes="key_green,Label,Button" name="key_green" position="380,907" size="370,38" backgroundColor="black" zPosition="1" transparent="1" font="Regular;34" halign="left" />
+		<widget objectTypes="key_green,StaticText" source="key_green" render="Label" position="380,907" size="370,38" backgroundColor="darkgrey" zPosition="2" transparent="1" foregroundColor="grey" font="Regular;34" halign="left" />
+		<widget objectTypes="key_green,StaticText" source="key_green" render="Pixmap" pixmap="Skin-MB65/buttons/green.png" position="330,909" size="34,34" zPosition="1" alphatest="blend">
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<ePixmap objectTypes="key_green,Button,Label" pixmap="Skin-MB65/buttons/green.png" position="330,909" size="34,34" zPosition="1" alphatest="blend" />
+
+		<widget objectTypes="key_yellow,Label,Button" name="key_yellow" position="810,866" size="370,38" backgroundColor="black" zPosition="1" transparent="1" font="Regular;34" halign="left" />
+		<widget objectTypes="key_yellow,StaticText" source="key_yellow" render="Label" position="810,866" size="370,38" backgroundColor="darkgrey" zPosition="2" transparent="1" foregroundColor="grey" font="Regular;34" halign="left" />
+		<widget objectTypes="key_yellow,StaticText" source="key_yellow" render="Pixmap" pixmap="Skin-MB65/buttons/yellow.png" position="760,868" size="34,34" zPosition="1" alphatest="blend">
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<ePixmap objectTypes="key_yellow,Button,Label" pixmap="Skin-MB65/buttons/yellow.png" position="760,868" size="34,34" zPosition="1" alphatest="blend" />
+
+		<widget objectTypes="key_blue,Label,Button" name="key_blue" position="810,907" size="370,38" backgroundColor="black" zPosition="1" transparent="1" font="Regular;34" halign="left" />
+		<widget objectTypes="key_blue,StaticText" source="key_blue" render="Label" position="810,907" size="370,38" backgroundColor="darkgrey" zPosition="2" transparent="1" foregroundColor="grey" font="Regular;34" halign="left" />
+		<widget objectTypes="key_blue,StaticText" source="key_blue" render="Pixmap" pixmap="Skin-MB65/buttons/blue.png" position="760,909" size="34,34" zPosition="1" alphatest="blend">
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<ePixmap objectTypes="key_blue,Button,Label" pixmap="Skin-MB65/buttons/blue.png" position="760,909" size="34,34" zPosition="1" alphatest="blend" />
+	</screen>
+	<screen name="ButtonTemplateEPG">
+		<panel name="ButtonRed"/>
+		<ePixmap pixmap="Skin-MB65/buttons/red48x48.png" position="40,810" size="48,48" alphatest="blend" />
+		<widget objectTypes="key_red,Label,Button" name="key_red" position="100,820" size="285,48" backgroundColor="black" zPosition="1" transparent="1" font="Regular;32" halign="left"/>
+		<widget objectTypes="key_red,StaticText" source="key_red" render="Label" position="100,820" size="285,48" backgroundColor="darkgrey" zPosition="2" transparent="1" foregroundColor="grey" font="Regular;32" halign="left"/>
+
+		<panel name="ButtonGreen"/>
+		<ePixmap pixmap="Skin-MB65/buttons/green48x48.png" position="475,810" size="48,48" alphatest="blend" />
+		<widget objectTypes="key_green,Label,Button" name="key_green" position="535,820" size="285,48" backgroundColor="black" zPosition="1" transparent="1" font="Regular;32" halign="left"/>
+		<widget objectTypes="key_green,StaticText" source="key_green" render="Label" position="535,820" size="285,48" backgroundColor="darkgrey" zPosition="2" transparent="1" foregroundColor="grey" font="Regular;32" halign="left"/>
+
+		<panel name="ButtonYellow"/>
+		<ePixmap pixmap="Skin-MB65/buttons/yellow48x48.png" position="910,810" size="48,48" alphatest="blend" />
+		<widget objectTypes="key_yellow,Label,Button" name="key_yellow" position="970,820" size="285,48" backgroundColor="black" zPosition="1" transparent="1" font="Regular;32" halign="left"/>
+		<widget objectTypes="key_yellow,StaticText" source="key_yellow" render="Label" position="970,820" size="285,48" backgroundColor="darkgrey" zPosition="2" transparent="1" foregroundColor="grey" font="Regular;32" halign="left"/>
+
+		<panel name="ButtonBlue"/>
+		<ePixmap pixmap="Skin-MB65/buttons/blue48x48.png" position="1335,810" size="48,48" alphatest="blend" />
+		<widget objectTypes="key_blue,Label,Button" name="key_blue" position="1395,820" size="285,48" backgroundColor="black" zPosition="1" transparent="1" font="Regular;32" halign="left"/>
+		<widget objectTypes="key_blue,StaticText" source="key_blue" render="Label" position="1395,820" size="285,48" backgroundColor="darkgrey" zPosition="2" transparent="1" foregroundColor="grey" font="Regular;32" halign="left"/>
+	</screen>
+</skin>
+
